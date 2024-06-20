@@ -19,8 +19,6 @@ add_executable (FirstServer
 "src/server/AbstractServer.cpp"  
 "src/StreamSocket.h" 
 "src/StreamSocket.cpp" 
- 
- 
 "src/ServerFactory.h" 
 "src/ServerFactory.cpp" 
 "src/loop/LoopInterface.h" 
@@ -58,10 +56,11 @@ add_executable (FirstServer
 "src/buff/Buff.h"   
 "src/SocketHandler.h" 
 "src/SocketHandler.cpp"
- 
 "src/Acceptor.h"
 "src/Acceptor.cpp"
-"src/Sock.h"  "src/protocol/Protocol.h" "src/protocol/Protocol.cpp")
+"src/Sock.h" 
+"src/protocol/Protocol.h"
+"src/protocol/Protocol.cpp")
 
 add_executable(client "src/client/Client.h"
 "src/client/Client.cpp" 
@@ -71,8 +70,6 @@ add_executable(client "src/client/Client.h"
 "src/server/AbstractServer.cpp"  
 "src/StreamSocket.h" 
 "src/StreamSocket.cpp" 
- 
- 
 "src/ServerFactory.h" 
 "src/ServerFactory.cpp" 
 "src/loop/LoopInterface.h" 
@@ -110,13 +107,15 @@ add_executable(client "src/client/Client.h"
 "src/buff/Buff.h"   
 "src/SocketHandler.h" 
 "src/SocketHandler.cpp"
- 
 "src/Acceptor.h"
 "src/Acceptor.cpp"
-"src/Sock.h"  "src/protocol/Protocol.h" "src/protocol/Protocol.cpp" "Client.cpp")
+"src/Sock.h"  
+"src/protocol/Protocol.h" 
+"src/protocol/Protocol.cpp" 
+"Client.cpp")
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
-  set_property(TARGET FirstServer PROPERTY CXX_STANDARD 20)
+  set_property(TARGET FirstServer PROPERTY CXX_STANDARD 11)
 endif()
 
 # TODO: 如有需要，请添加测试并安装目标。
