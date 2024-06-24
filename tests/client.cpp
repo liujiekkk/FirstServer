@@ -1,5 +1,5 @@
-#include "src/client/Client.h"
-#include "src/client/Connection.h"
+#include "client/Client.h"
+#include "client/Connection.h"
 #include <string>
 #include <iostream>
 
