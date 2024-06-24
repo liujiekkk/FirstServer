@@ -2,32 +2,34 @@ cmake_minimum_required(VERSION 3.8)
 
 project("tests")
 
-# Ìí¼ÓÍ·ÎÄ¼şÂ·¾¶.
+# æ·»åŠ å¤´æ–‡ä»¶è·¯å¾„.
 # include_directories(${include_path})
 
-# ¿Í»§¶ËÔ´ÎÄ¼şÁĞ±í
+# å®¢æˆ·ç«¯æºæ–‡ä»¶åˆ—è¡¨
 set(client_sources "client.cpp")
 
-# ·şÎñ¶ËÔ´ÎÄ¼şÁĞ±í
+# æœåŠ¡ç«¯æºæ–‡ä»¶åˆ—è¡¨
 set(server_sources "server.cpp")
 
-# ÉèÖÃÉú³ÉÂ·¾¶.
+# è®¾ç½®ç”Ÿæˆè·¯å¾„.
 # set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR})
 
-# Éú³É¿Í»§¶Ë¿ÉÖ´ĞĞÎÄ¼ş
+# ç”Ÿæˆå®¢æˆ·ç«¯å¯æ‰§è¡Œæ–‡ä»¶
 add_executable("client" ${client_sources})
-# Éú³É·şÎñ¶Ë¿ÉÖ´ĞĞÎÄ¼ş
+# ç”ŸæˆæœåŠ¡ç«¯å¯æ‰§è¡Œæ–‡ä»¶
 add_executable("server" ${server_sources})
 
-# Ìí¼ÓÍ·ÎÄ¼şÄ¿Â¼
+# æ·»åŠ å¤´æ–‡ä»¶ç›®å½•
 target_include_directories("server" PRIVATE ${include_path})
 target_include_directories("client" PRIVATE ${include_path})
 
+# æ·»åŠ è‡ªå®šä¹‰åº“
 target_link_libraries("client" "FirstServer")
 target_link_libraries("server" "FirstServer")
-
+# æ·»åŠ è‡ªå®šä¹‰åº“çš„ç›®å½•
 target_link_directories("client" PRIVATE ${lib_path})
 target_link_directories("server" PRIVATE ${lib_path})
 
+# è®¾ç½® cmake ç›¸å…³è¾“å‡ºç›®å½•
 set_target_properties(client PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 set_target_properties(server PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})

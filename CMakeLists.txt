@@ -14,20 +14,10 @@ project ("FirstServer")
 set(source_path ${PROJECT_SOURCE_DIR}/src)
 
 # 设置头文件目录.
-set(include_path 
-	${PROJECT_SOURCE_DIR}/src
-	${PROJECT_SOURCE_DIR}/src/buff
-	${PROJECT_SOURCE_DIR}/src/client
-	${PROJECT_SOURCE_DIR}/src/container
-	${PROJECT_SOURCE_DIR}/src/loop
-	${PROJECT_SOURCE_DIR}/src/poller
-	${PROJECT_SOURCE_DIR}/src/processor
-	${PROJECT_SOURCE_DIR}/src/protocol
-	${PROJECT_SOURCE_DIR}/src/server
-)
+set(include_path ${PROJECT_SOURCE_DIR}/src)
 
 # 递归获取源文件.
-file(GLOB_RECURSE source_list *.cpp)
+file(GLOB_RECURSE source_list ${source_path}/*.cpp)
 
 # 设置静态库存储路径.
 set(lib_path ${PROJECT_SOURCE_DIR}/lib)
